@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="utf-8" />
+  <title>شركة سنوري زاخو</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap" rel="stylesheet">
+  <style>
+    /* Basic reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html,
+    body {
+      height: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      line-height: 1.2;
+      font-family: "Noto Kufi Arabic", "Segoe UI", Tahoma, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      font-size: 15px;
+      color: #6c6c86;
+      background-color: #fff;
+      overflow-x: hidden;
+      direction: rtl;
+    }
+
+    /* Utilities & layout */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin: 0 -15px;
+    }
+
+    .col-12 {
+      width: 100%;
+      padding: 0 15px;
+    }
+
+    .col-md-6 {
+      width: 100%;
+      padding: 0 15px;
+    }
+
+    .col-lg-4 {
+      width: 100%;
+      padding: 0 15px;
+    }
+
+    @media(min-width:768px) {
+      .col-md-6 {
+        width: 50%
+      }
+    }
+
+    @media(min-width:992px) {
+      .col-lg-4 {
+        width: 33.3333%
+      }
+    }
+
+    .mx-auto {
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .text-center {
+      text-align: center
+    }
+
+    .text-right {
+      text-align: right
+    }
+
+    .d-flex {
+      display: flex
+    }
+
+    .justify-content-center {
+      justify-content: center
+    }
+
+    .align-items-center {
+      align-items: center
+    }
+
+    /* Head / navigation */
+    .navigation {
+      padding: 18px 30px;
+      transition: 0.3s ease;
+      position: absolute;
+      top: 10px;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      width: calc(100% - 20px);
+      margin: 0 10px;
+      background: transparent;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px
+    }
+
+    #logo {
+      height: 60px;
+      width: 60px;
+      display: block
+    }
+
+    #logo img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain
+    }
+
+    /* Navbar basic */
+    .navbar {
+      width: 100%
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: inherit
+    }
+
+    .navbar-toggler {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      color: #fff;
+      padding: 8px 10px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .navbar-toggler span {
+      display: inline-block;
+      width: 22px;
+      height: 2px;
+      background: #fff
+    }
+
+    .navbar-nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-item {}
+
+    .nav-link {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .navbar-collapse {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .navbar-collapse.collapsed {
+      display: none
+    }
+
+    /* Small screens: make nav vertical */
+    @media(max-width:991px) {
+      .navigation {
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        margin: 0;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px
+      }
+
+      .navbar-collapse {
+        flex-direction: column;
+        align-items: stretch;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 12px;
+        border-radius: 8px;
+        margin-top: 20px;
+      }
+
+      .navbar-nav {
+        flex-direction: column;
+        gap: 25px
+      }
+
+      .nav-link {
+        color: #fff;
+        padding: 10px
+      }
+    }
+
+    /* Banner / hero */
+    .banner {
+      min-height: 100vh;
+      background-image: url('images/banner.png');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .banner .hero-box {
+      background: rgba(0, 0, 0, 0.45);
+      padding: 25px;
+      border-radius: 8px;
+    }
+
+    .display-1 {
+      font-size: 72px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px
+    }
+
+    @media(max-width:575px) {
+      .display-1 {
+        font-size: 36px
+      }
+
+      .banner .hero-box {
+        padding: 25px
+      }
+    }
+
+    .section-title {
+      margin-top: 70px;
+      font-weight: 700;
+      font-size: 1.9rem;
+      margin-bottom: 12px
+    }
+
+    .section-border {
+      height: 9px;
+      width: 220px;
+      background: linear-gradient(37deg, #aca103 1%, #fff112 100%);
+      border-radius: 5px;
+      margin: 20px auto
+    }
+
+    /* Cards / products */
+    .card {
+      background: #fff;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(18, 18, 31, 0.06);
+      display: flex;
+      flex-direction: column;
+      height: 100%
+    }
+
+    .simg {
+      height: 300px;
+      overflow: hidden;
+      background: #f5f5f5
+    }
+
+    .simg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    .card-body {
+      padding: 18px;
+      text-align: center
+    }
+
+    .h5 {
+      font-size: 18px;
+      margin: 0 0 8px;
+      font-weight: 700
+    }
+
+    .card-text {
+      color: #6c6c86;
+      line-height: 1.6
+    }
+
+    /* Texts */
+    .lead {
+      font-size: 18px;
+      color: #6c6c86;
+      line-height: 1.7
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #000;
+      font-weight: 700;
+      line-height: 1.2
+    }
+
+    /* Contact map */
+    .locationnn iframe {
+      border: 0;
+      width: 100%;
+      height: 450px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
+    }
+
+    /* Footer */
+    footer {
+      background: #000;
+      padding: 15px;
+      color: #fff;
+      margin-top: 20px
+    }
+
+    footer p {
+      text-align: center;
+      color: #fff;
+      margin: 0
+    }
+
+    /* Links & colors */
+    a {
+      color: inherit
+    }
+
+    .section .section-border.my-3 {
+      height: 4px;
+      width: 80px;
+      background: linear-gradient(37deg, #aca103 1%, #fff112 100%);
+      border-radius: 4px;
+    }
+
+    .navbutton {
+      display: flex;
+    }
+
+    /* small adjustments */
+    @media(min-width:992px) {
+      .navbutton {
+        display: none;
+      }
+
+      .navbar-collapse{
+        display: none;
+      }
+
+      .header-inner {
+        justify-content: center;
+      }
+
+      #logo {
+        height: 140px;
+        width: 140px;
+        display: block;
+      }
+
+      .navigation {
+        top: 20px
+      }
+
+      .banner {
+        padding-top: 90px
+      }
+    }
+
+    /* dropdown simple */
+    .dropdown {
+      position: relative
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      background: #fff;
+      padding: 10px;
+      border-radius: 6px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12)
+    }
+
+    .dropdown.open .dropdown-menu {
+      display: block
+    }
+
+    /* accessibility focus */
+    .nav-link:focus,
+    .navbar-toggler:focus {
+      outline: 2px solid rgba(255, 255, 255, 0.3);
+      outline-offset: 2px
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="navigation" role="banner" aria-label="الرأس">
+    <div class="container header-inner">
+      <a class="navbar-brand" href="#banner">
+        <span id="logo"><img src="images/logo.png" alt="سنوري زاخو"></span>
+      </a>
+
+      <div class="navbutton" style="align-items:center; gap:12px;">
+        <button class="navbar-toggler" id="navToggle" aria-expanded="false" aria-controls="navigation"
+          aria-label="قائمة">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav id="navigation" class="navbar-collapse collapsed" aria-label="القائمة الرئيسية">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#about">من نحن</a></li>
+        <li class="nav-item"><a class="nav-link" href="#materials">موادنا الأساسية</a></li>
+        <li class="nav-item"><a class="nav-link" href="#why-us">لماذا نحن؟</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">تواصل معنا</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- banner -->
+  <section class="banner" id="banner" role="region" aria-label="البانر">
+    <div class="container">
+      <div class="row" style="justify-content:center">
+        <div class="col-12 text-center">
+          <div class="hero-box">
+            <h1 class="display-1"><span style="color:#fff112">سنورى</span> زاخو</h1>
+            <h3 style="color:#fff; margin-top:6px">للتجارة العامة و استيراد و تصدير المحدودة</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / intro -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="row" style="justify-content:center">
+        <div class="col-12 text-center mx-auto" style="max-width:980px">
+          <h2 class="section-title">من نحن</h2>
+          <div class="section-border my-3"></div>
+          <p class="lead" style="text-align:justify">
+            نحن شركة سنوري زاخو للمواد الإنشائية، نعمل بفخر في مجال بيع وتوريد جميع المواد الإنشائية الخاصة ببناء وتشطيب
+            المنازل والمشاريع، ابتداءً من مرحلة التأسيس وحتى اللمسات النهائية.
+
+            منذ انطلاقتنا، وضعنا هدفنا أن نكون الوجهة الأولى في المنطقة لكل من يبحث عن الجودة العالية، والخدمة
+            الموثوقة، والأسعار المناسبة. لذلك نحرص دائمًا على توفير أفضل البراندات العالمية في عالم البناء والديكور
+            لضمان متانة وجمال مشاريعكم.
+
+            نتميز بخدمة عملاء مميزة، وفريق متخصص يقدم الاستشارات المناسبة لاختيار المواد الأفضل لمتطلباتكم، سواء كنت
+            صاحب مشروع، مقاولًا، أو صاحب منزل.
+
+            نحن في سنوري زاخو نؤمن أن الجودة تبدأ من الأساس — ولهذا نرافقكم خطوة بخطوة نحو بناء يدوم وثقة لا تنتهي.
+          </p>
+          <div class="section-border"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Materials / Products -->
+  <section class="section" id="materials">
+    <div class="container">
+      <div class="row" style="justify-content:center;">
+        <div class="col-12 text-center mx-auto" style="max-width:980px">
+          <h2 class="section-title">موادنا الأساسية</h2>
+          <div class="section-border my-3"></div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <!-- جبسن بورد -->
+        <div class="col-md-6 col-lg-4">
+          <article class="card h-100">
+            <div class="simg">
+              <img loading="lazy" src="images/board.jpg" alt="جبسن بورد" />
+            </div>
+            <div class="card-body">
+              <h3 class="h5 card-title">جبسن بورد</h3>
+              <p class="card-text">ألواح جبس عالية الجودة للأسقف والحوائط الداخلية، متوفرة بمقاسات وتصاميم متعددة
+                لتركيب سريع ومظهر عصري.</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- كرفانات / كابينات -->
+        <div class="col-md-6 col-lg-4">
+          <article class="card h-100">
+            <div class="simg">
+              <img loading="lazy" src="images/karavan.jpg" alt="كرفانات" />
+            </div>
+            <div class="card-body">
+              <h3 class="h5 card-title">كرفانات</h3>
+              <p class="card-text">وحدات جاهزة للسكن أو المكاتب المؤقتة، تصميم متين وسهل النقل والتركيب، مناسب
+                للمواقع والمشاريع المؤقتة.</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- اسمنت و قلكيم -->
+        <div class="col-md-6 col-lg-4">
+          <article class="card h-100">
+            <div class="simg">
+              <img loading="lazy" src="images/ciment.jpg" alt="اسمنت" />
+            </div>
+            <div class="card-body">
+              <h3 class="h5 card-title">أسمنت &amp; قلكيم</h3>
+              <p class="card-text">مواد تأسيسية أساسية لضمان متانة البناء واستقراره. نوفر أنواع الأسمنت ومكمّلات
+                الخلط بجودة عالية.</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- أبواب خشبية -->
+        <div class="col-md-6 col-lg-4">
+          <article class="card h-100">
+            <div class="simg">
+              <img loading="lazy" src="images/door.jpg" alt="أبواب خشبية" />
+            </div>
+            <div class="card-body">
+              <h3 class="h5 card-title">أبواب خشبية</h3>
+              <p class="card-text">أبواب داخلية وخارجية بتشطيبات متعددة، خشب متين وتصميمات تلائم كل الأذواق
+                والمساحات.</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- قرميد -->
+        <div class="col-md-6 col-lg-4">
+          <article class="card h-100">
+            <div class="simg">
+              <img loading="lazy" src="images/qarmid.jpg" alt="قرميد" />
+            </div>
+            <div class="card-body">
+              <h3 class="h5 card-title">قرميد</h3>
+              <p class="card-text">قرميد عالي الجودة لتغطية الأسطح، يوفر عزلًا حراريًا ومظهرًا جماليًا يدوم لسنوات.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <!-- خشب أرضي (باركيه) -->
+        <div class="col-md-6 col-lg-4">
+          <article class="card h-100">
+            <div class="simg">
+              <img loading="lazy" src="images/ground.jpg" alt="خشب أرضي" />
+            </div>
+            <div class="card-body">
+              <h3 class="h5 card-title">خشب أرضي (باركيه)</h3>
+              <p class="card-text">أرضيات خشبية فاخرة تضيف دفء وفخامة للمنزل، متوفرة بأنماط وألوان متنوعة.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us / Advantages -->
+  <section class="section" id="why-us">
+    <div class="container">
+      <div class="row" style="justify-content:center">
+        <div class="col-12 text-center mx-auto" style="max-width:980px">
+          <h2 class="section-title">لماذا نحن؟</h2>
+          <div class="section-border my-3"></div>
+          <p class="lead" style="text-align:justify">
+            نحن نتميز بخبرة طويلة في مجال المواد الإنشائية، نوفر أفضل المنتجات بأسعار تنافسية، مع فريق متخصص يقدم
+            استشارات مهنية لضمان نجاح مشاريعكم، مع التوصيل السريع وخدمة العملاء الممتازة.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" style="padding-top:0; padding-bottom:0;">
+    <div class="container">
+      <div class="row" style="justify-content:center">
+        <div class="col-lg-10 mx-auto text-right" style="max-width:980px">
+          <h2 class="section-title text-center">تواصل معنا</h2>
+          <div class="section-border my-3" style="height:4px;width:80px"></div>
+          <div style="padding: 20px;display: flex;flex-direction: column;gap: 15px;">
+            <p class="lead" style="text-align:justify">نرحب بتواصلكم لأي استفسار أو طلب عرض أسعار:</p>
+
+            <!-- Email -->
+            <div id="email" style="display:flex; gap:6px; align-items:center; margin-bottom:8px">
+              <p style="font-weight:bold; color:#000; margin:0">البريد الإلكتروني:&nbsp;</p>
+              <a href="mailto:snorizakho@gmail.com" style="margin:0; color:#007bff; text-decoration:none;">
+                snorizakho@gmail.com
+              </a>
+            </div>
+
+            <!-- Phone 1 -->
+            <div id="phonenumber" style="display:flex; gap:6px; align-items:center; margin-bottom:8px">
+              <p style="font-weight:bold; color:#000; margin:0">الهاتف:&nbsp;</p>
+              <a href="tel:+9647507348275" style="margin:0; color:#007bff; text-decoration:none;">
+                9647507348275+
+              </a>
+            </div>
+
+            <!-- Phone 2 -->
+            <a href="tel:+9647507490593" style="margin:0 0 10px 0; color:#007bff; text-decoration:none;">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9647507490593+
+            </a>
+
+            <!-- Address -->
+            <p style="margin:0 0 10px 0">
+              <span style="font-weight:bold; color:#000">العنوان: </span>
+              العراق - زاخو - طريق ابراهيم خليل
+            </p>
+
+            <!-- Map -->
+            <div class="locationnn" style="margin-top:12px">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3180.432400760275!2d42.642799784700394!3d37.14241667987952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzfCsDA4JzMyLjciTiA0MsKwMzgnMjYuMiJF!5e0!3m2!1sar!2siq!4v1761009790134!5m2!1sar!2siq"
+                loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="موقعنا على الخريطة"
+                style="width:100%; height:450px; border:0; border-radius:12px; box-shadow:0 0 10px rgba(0,0,0,0.1);">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 شركة سنوري زاخو. جميع الحقوق محفوظة.</p>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navigation = document.getElementById('navigation');
+
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
+      navToggle.setAttribute('aria-expanded', !expanded);
+      navigation.classList.toggle('collapsed');
+    });
+  </script>
+
+</body>
+
+</html>
